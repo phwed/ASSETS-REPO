@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "f3ddb391-7bb8-4397-beee-705efa4d199e",
+		"name": "Blue Box Client",
+		"description": "This is a descriptive description for the descresion of the reader who requires some descriptions to be given them",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44581073"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"accessToken\", pm.response.json()[\"accessToken\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"api_username\": \"smartapp_engine\",\r\n    \"api_password\": \"OxI2YRFocklt@RDPLy6u\"\r\n}\r\n/*\r\n{\r\n  \"api_username\": \"deh_vas\",\r\n  \"api_password\": \"pZrepp2aTip@lDgyjN15\"\r\n}\r\n{\r\n  \"api_username\": \"api_icollect\",\r\n  \"api_password\": \"$!~#uuvels?t~2mzx?d@\"\r\n}\r\n{\r\n    \"api_username\": \"smartapp_engine\",\r\n    \"api_password\": \"OxI2YRFocklt@RDPLy6u\"\r\n}\r\n//*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Authorization",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"api_username\": \"smartapp_engine\",\r\n    \"api_password\": \"OxI2YRFocklt@RDPLy6u\"\r\n}\r\n/*\r\n{\r\n  \"api_username\": \"deh_vas\",\r\n  \"api_password\": \"pZrepp2aTip@lDgyjN15\"\r\n}\r\n{\r\n  \"api_username\": \"api_icollect\",\r\n  \"api_password\": \"$!~#uuvels?t~2mzx?d@\"\r\n}\r\n{\r\n    \"api_username\": \"smartapp_engine\",\r\n    \"api_password\": \"OxI2YRFocklt@RDPLy6u\"\r\n}\r\n//*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jan 2025 07:33:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=ISO-8859-1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseBody\": {\n        \"status\": \"Credential Access Granted\",\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzbWFydGFwcF9lbmdpbmUiLCJleHAiOjE3MzgwNzk2MjgsImlhdCI6MTczODA0OTYyOH0.0zTe48S5FC1ytJtb7khysqDJayLtvJ-nh5NMpP-rs7jjp-cPTo70YpQ1oBePzM5ve-5MhmFNReSiFUmnTTJ4UA\"\n    },\n    \"responseHeader\": {\n        \"sourceCode\": \"smartapp_engine\",\n        \"requestId\": \"20250128073348856656890411\",\n        \"responseMessage\": \"Credential Access Granted\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "services",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/stanbic/v1/client/services?serviceCategoryShortCode=DCT",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"stanbic",
+						"v1",
+						"client",
+						"services"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "7",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": ":status",
+							"disabled": true
+						},
+						{
+							"key": "serviceCode",
+							"value": "TATU",
+							"description": "TATU|TNMTC|GHANAGOV-BILL",
+							"disabled": true
+						},
+						{
+							"key": "serviceCategoryCode",
+							"value": "SCHOOLS",
+							"disabled": true
+						},
+						{
+							"key": "serviceCategoryShortCode",
+							"value": "DCT",
+							"description": "SCH|UTI|DCT"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "services",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stanbic/v1/client/services?serviceCategoryShortCode=UTI",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stanbic",
+								"v1",
+								"client",
+								"services"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "7",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": ":status",
+									"disabled": true
+								},
+								{
+									"key": "serviceCode",
+									"value": "TATU",
+									"description": "TATU|TNMTC|GHANAGOV-BILL",
+									"disabled": true
+								},
+								{
+									"key": "serviceCategoryCode",
+									"value": "SCHOOLS",
+									"disabled": true
+								},
+								{
+									"key": "serviceCategoryShortCode",
+									"value": "UTI",
+									"description": "SCH|UTI"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Jan 2025 10:38:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseHeader\": {\n        \"sourceCode\": \"api_icollect\",\n        \"requestId\": \"20250125103855395672589815\",\n        \"responseMessage\": \"1 record retrieved successfully.\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    },\n    \"responseBody\": {\n        \"totalPages\": 1,\n        \"totalRecords\": 1,\n        \"pageRecordCount\": 1,\n        \"message\": \"Page 1 of 1 | Records 1 of 1\",\n        \"data\": [\n            {\n                \"categoryShortCode\": \"UTI\",\n                \"categoryCode\": \"UTILITY\",\n                \"categoryDescription\": \"Utilities\",\n                \"services\": [\n                    {\n                        \"id\": 10,\n                        \"serviceId\": \"31a5f4aa-a7b9-4484-bd01-0c2d520914b0\",\n                        \"serviceCode\": \"ELECTRICITY\",\n                        \"name\": \"ELECTRICITY\",\n                        \"description\": null,\n                        \"currency\": \"GHS\",\n                        \"suspenseAccount\": \"9040009907674\",\n                        \"isAvailable\": true,\n                        \"isChargePreviewRequired\": false,\n                        \"isReversalOnSuspenseAcctAllowed\": true,\n                        \"uiFields\": {\n                            \"amountToPayFixed\": false,\n                            \"nextStepRequired\": true,\n                            \"formFields\": [\n                                {\n                                    \"label\": \"Mobile Number\",\n                                    \"key\": \"serviceCustomerId\",\n                                    \"type\": \"STRING\",\n                                    \"hasAmount\": false,\n                                    \"value\": null,\n                                    \"fieldValidationRegex\": null\n                                }\n                            ],\n                            \"requiredFields\": [\n                                {\n                                    \"label\": \"function\",\n                                    \"type\": \"STRING\",\n                                    \"key\": \"function\",\n                                    \"display\": false,\n                                    \"userInput\": false,\n                                    \"required\": true,\n                                    \"value\": \"default\"\n                                },\n                                {\n                                    \"label\": \"Mobile Number\",\n                                    \"type\": \"STRING\",\n                                    \"key\": \"serviceCustomerId\",\n                                    \"display\": true,\n                                    \"userInput\": true,\n                                    \"required\": true,\n                                    \"value\": null\n                                },\n                                {\n                                    \"label\": \"service code\",\n                                    \"type\": \"STRING\",\n                                    \"key\": \"serviceCode\",\n                                    \"display\": false,\n                                    \"userInput\": false,\n                                    \"required\": true,\n                                    \"value\": \"ELECTRICITY\"\n                                }\n                            ],\n                            \"displayFields\": [\n                                {\n                                    \"label\": \"Mobile Number\",\n                                    \"type\": \"STRING\",\n                                    \"key\": \"serviceCustomerId\",\n                                    \"display\": false,\n                                    \"userInput\": false,\n                                    \"required\": true,\n                                    \"value\": null\n                                }\n                            ]\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "service-lookup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceCode\": \"MTN_ACCOUNT_TO_WALLET_DIRECT\",\r\n    \"function\": \"default\",\r\n    \"serviceCustomerId\":\"233244897992\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/stanbic/v1/client/service-lookup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"stanbic",
+						"v1",
+						"client",
+						"service-lookup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "service-lookup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceCode\": \"MTN_ACCOUNT_TO_WALLET_DIRECT\",\r\n    \"function\": \"default\",\r\n    \"serviceCustomerId\":\"233244897992\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/stanbic/v1/client/service-lookup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stanbic",
+								"v1",
+								"client",
+								"service-lookup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jan 2025 08:33:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseHeader\": {\n        \"sourceCode\": \"smartapp_engine\",\n        \"requestId\": \"20250128083345053349524462\",\n        \"responseMessage\": \"name enquiry successful\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    },\n    \"responseBody\": {\n        \"function\": \"default\",\n        \"customerReference\": \"233244897992\",\n        \"timestamp\": \"2025-01-28T08:33:45\",\n        \"currency\": \"GHS\",\n        \"accountName\": null,\n        \"accountBalance\": 0,\n        \"uiFields\": {\n            \"amountToPayFixed\": false,\n            \"nextStepRequired\": false,\n            \"formFields\": [\n                {\n                    \"label\": \"Sender Account\",\n                    \"key\": \"debitAccount\",\n                    \"type\": \"TEXT\",\n                    \"hasAmount\": false,\n                    \"fieldValidationRegex\": null,\n                    \"value\": \"\"\n                }\n            ],\n            \"requiredFields\": [\n                {\n                    \"label\": \"Sender Account\",\n                    \"key\": \"debitAccount\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": true,\n                    \"required\": true\n                },\n                {\n                    \"label\": \"Beneficiary Number\",\n                    \"key\": \"creditAccount\",\n                    \"type\": \"TEXT\",\n                    \"display\": true,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                },\n                {\n                    \"label\": \"Beneficiary Name\",\n                    \"key\": \"beneficiaryName\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"JOHN LINKAGE-TEST\"\n                },\n                {\n                    \"label\": \"Mobile Number\",\n                    \"key\": \"serviceCustomerId\",\n                    \"type\": \"TEXT\",\n                    \"display\": true,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                },\n                {\n                    \"label\": \"Mobile Number\",\n                    \"key\": \"serviceCustomerId\",\n                    \"type\": \"TEXT\",\n                    \"display\": true,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                },\n                {\n                    \"label\": \"Service Code\",\n                    \"key\": \"serviceCode\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"MTN_ACCOUNT_TO_WALLET_DIRECT\"\n                }\n            ],\n            \"displayFields\": [\n                {\n                    \"label\": \"Beneficiary Number\",\n                    \"key\": \"creditAccount\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                },\n                {\n                    \"label\": \"Mobile Number\",\n                    \"key\": \"serviceCustomerId\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                },\n                {\n                    \"label\": \"Mobile Number\",\n                    \"key\": \"serviceCustomerId\",\n                    \"type\": \"TEXT\",\n                    \"display\": false,\n                    \"userInput\": false,\n                    \"required\": true,\n                    \"value\": \"233244897992\"\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "service-charge",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceCode\": \"ELECTRICITY\",\r\n    \"function\": \"default\",\r\n    \"serviceCustomerId\":\"233244897992\",\r\n    \"amount\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/stanbic/v1/client/service-charge",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"stanbic",
+						"v1",
+						"client",
+						"service-charge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "service-charge-purchase",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceCode\": \"ELECTRICITY\",\r\n    \"function\": \"default\",\r\n    \"serviceCustomerId\":\"233244897992\",\r\n    \"amount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/stanbic/v1/client/service-charge",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stanbic",
+								"v1",
+								"client",
+								"service-charge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jan 2025 10:22:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseHeader\": {\n        \"sourceCode\": \"smartapp_engine\",\n        \"requestId\": \"20250128102257115874366081\",\n        \"responseMessage\": \"record retrieved successfully.\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    },\n    \"responseBody\": {\n        \"data\": {\n            \"serviceId\": \"31a5f4aa-a7b9-4484-bd01-0c2d520914b0\",\n            \"serviceCode\": \"ELECTRICITY\",\n            \"chargeId\": \"BBCHRG-20250128102257149163275801\",\n            \"elevyId\": \"\",\n            \"taxId\": \"\",\n            \"amount\": 20,\n            \"tax\": 0,\n            \"charge\": 0\n        }\n    }\n}"
+				},
+				{
+					"name": "service-charge-transfer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceCode\": \"MTN_ACCOUNT_TO_WALLET_DIRECT\",\r\n    \"function\": \"default\",\r\n    \"creditAccount\":\"233244897992\",\r\n    \"debitAccount\":\"9001232212342\",\r\n    \"amount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/stanbic/v1/client/service-charge",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stanbic",
+								"v1",
+								"client",
+								"service-charge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jan 2025 10:22:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseHeader\": {\n        \"sourceCode\": \"smartapp_engine\",\n        \"requestId\": \"20250128102241644979707999\",\n        \"responseMessage\": \"record retrieved successfully.\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    },\n    \"responseBody\": {\n        \"data\": {\n            \"serviceId\": \"4b50e020-8753-41c4-af53-a900d430104d\",\n            \"serviceCode\": \"MTN_ACCOUNT_TO_WALLET_DIRECT\",\n            \"chargeId\": \"BBCHRG-20250128102241685393132605\",\n            \"elevyId\": \"20250128102133800864\",\n            \"taxId\": \"20250128102133800864\",\n            \"amount\": 20,\n            \"tax\": 0.12,\n            \"charge\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "service-payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientRequestId\": \"567654321\",\r\n    \"bankCustomerId\": \"123432\",\r\n    \"serviceCustomerId\": \"02451006688\",\r\n    \"customerPhone\": \"0200233223\",\r\n    \"payNote\": \"Payment for water\",\r\n    \"amount\": 1,\r\n    \"chargeId\":\" BBCHRG-2024060510060\",\r\n    \"webhookUrl\":\"https://webhook\",\r\n    \"extraData\":{\r\n        \"serviceCode\": \"ELECTRICITY\",\r\n        \"function\": \"default\",\r\n        \"serviceCustomerId\":\"233244897992\",\r\n        \"amount\": 20\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/stanbic/v1/client/payment",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"stanbic",
+						"v1",
+						"client",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "service-payment-status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientRequestId\": \"567654321UAT001\",\r\n    \"bankCustomerId\": \"123432\",\r\n    \"customerPhone\": \"0200233223\",\r\n    \"userNarration\": \"Payment for fees\",\r\n    \"amount\": 1,\r\n    \"serviceCode\": \"RECT-ACADEMY\",\r\n    \"extraData\": {\r\n        \"serviceCode\": \"RECT-ACADEMY\",\r\n        \"productCode\": \"RECT-ACADEMY-FEES\",\r\n        \"serviceCustomerId\":\"1509\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/stanbic/v1/client/service-payment/567654321UAT002",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"stanbic",
+						"v1",
+						"client",
+						"service-payment",
+						"567654321UAT002"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "service-payment-status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/stanbic/v1/client/service-payment/567654321UAT002",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"stanbic",
+								"v1",
+								"client",
+								"service-payment",
+								"567654321UAT002"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' https://sbicdirectory.com; object-src https://sbicdirectory.com; report-uri /csp-report-endpoint/"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=3600, enforce"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jan 2025 10:24:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseHeader\": {\n        \"sourceCode\": \"smartapp_engine\",\n        \"requestId\": \"20250128102453075945004416\",\n        \"responseMessage\": \"purchase retrieved successfully.\",\n        \"statusCode\": \"000\",\n        \"vasStatusCode\": \"0\",\n        \"vasStatusDesc\": \"Success\",\n        \"responseCode\": \"SUCCESS\"\n    },\n    \"responseBody\": {\n        \"data\": {\n            \"processType\": \"PURCHASE\",\n            \"id\": \"994b3697-eb14-41eb-8f1f-4f0a38144e6f\",\n            \"clientRequestId\": \"567654321UAT002\",\n            \"clientId\": \"smartapp_engine\",\n            \"clientName\": \"RECT ACADEMY\",\n            \"providerId\": \"c81ad0ef-d837-4cda-8432-21c561f16ebb\",\n            \"providerCode\": \"RECT-ACADEMY\",\n            \"providerName\": \"RECT ACADEMY\",\n            \"serviceId\": \"378ce490-a772-4483-a4ab-9e630e47b2af\",\n            \"serviceCode\": \"RECT-ACADEMY\",\n            \"serviceName\": \"Rect Academy\",\n            \"productId\": \"a221c3ec-c931-4a48-8342-65b1f93d703a\",\n            \"productCode\": \"RECT-ACADEMY-FEES\",\n            \"productName\": \"FEES\",\n            \"bankCustomerId\": \"123432\",\n            \"serviceCustomerId\": \"1509\",\n            \"transferType\": \"\",\n            \"userNarration\": \"PAYMENT\",\n            \"transactionCurrency\": \"GHS\",\n            \"amount\": 1,\n            \"chargeAmount\": 0,\n            \"taxAmount\": 0,\n            \"transactionNarration\": \"\",\n            \"transactionReference\": \"\",\n            \"debitCreditIndicator\": \"\",\n            \"senderId\": \"\",\n            \"senderName\": \"\",\n            \"senderContact\": \"\",\n            \"senderReference\": \"\",\n            \"senderUserAccount\": \"\",\n            \"senderAgentDebitAccount\": \"\",\n            \"beneficiaryId\": \"\",\n            \"beneficiaryName\": \"\",\n            \"beneficiaryPhone\": \"\",\n            \"beneficiaryEmail\": \"\",\n            \"beneficiaryInfo\": \"\",\n            \"beneficiaryUserAccount\": \"\",\n            \"beneficiaryAgentCode\": \"\",\n            \"beneficiaryAgentName\": \"\",\n            \"beneficiaryAgentCreditAccount\": \"\",\n            \"eLevyId\": \"\",\n            \"eLevyResponseId\": \"\",\n            \"chargeId\": \"\",\n            \"chargeCreditAccount\": \"9040006400781\",\n            \"chargeDebitAccount\": \"\",\n            \"webhookUrl\": \"\",\n            \"webhookCallStatus\": \"\",\n            \"postingDate\": \"\",\n            \"taxTransactionStatus\": \"NOT_APPLICABLE\",\n            \"chargeTransactionStatus\": \"NOT_APPLICABLE\",\n            \"paymentTransactionStatus\": \"SUCCESS\",\n            \"providerTransactionStatus\": \"SUCCESS\",\n            \"chargeTransactionReference\": \"\",\n            \"paymentTransactionReference\": \"NOENTRY\",\n            \"taxTransactionReference\": \"\",\n            \"providerTransactionReference\": \"\",\n            \"cbaTransactionReference\": \"\",\n            \"eLevyUniqueReference\": \"\",\n            \"cbaResponseCode\": \"\",\n            \"checkoutId\": \"\",\n            \"checkoutUrl\": \"\",\n            \"transferInfo\": \"\",\n            \"payerName\": \"\",\n            \"processDate\": \"2025-01-27 00:00:00.0\",\n            \"providerErrorCode\": \"\",\n            \"providerErrorMessage\": \"\",\n            \"providerSessionCode\": \"\",\n            \"extraPaymentData\": \"{\\\"serviceCode\\\":\\\"RECT-ACADEMY\\\",\\\"productCode\\\":\\\"RECT-ACADEMY-FEES\\\",\\\"serviceCustomerId\\\":\\\"1509\\\"}\",\n            \"lastAction\": \"STATUS_UPDATE\",\n            \"recordStatus\": \"SUCCESS\",\n            \"requestId\": \"20250127212353323280973642\",\n            \"createdBy\": \"smartapp_engine\",\n            \"createdDate\": \"2025-01-27 21:23:53.0\",\n            \"info\": \"\",\n            \"finalStatus\": \"SUCCESS\",\n            \"transactionId\": \"567654321UAT002\",\n            \"statusCode\": \"0\",\n            \"statusDesc\": \"Success\",\n            \"timestamp\": \"2025-01-28T10:24:53\",\n            \"customerPhone\": \"0200233223\"\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default",
+			"disabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "default",
+			"disabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": ""
+		}
+	]
+}

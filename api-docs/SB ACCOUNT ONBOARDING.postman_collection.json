@@ -1,0 +1,938 @@
+{
+	"info": {
+		"_postman_id": "c9274dcb-0b64-4be2-b441-3c46411afbf0",
+		"name": "SB ACCOUNT ONBOARDING",
+		"description": "Here lies the description as requested",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44581073"
+	},
+	"item": [
+		{
+			"name": "Check GH Card Verified",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/verification/ghanacard/checker?idCard=GHA-753034803-3",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"verification",
+						"ghanacard",
+						"checker"
+					],
+					"query": [
+						{
+							"key": "idCard",
+							"value": "GHA-753034803-3"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/verification/ghanacard/checker?idCard=GHA-112211221-1",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"verification",
+								"ghanacard",
+								"checker"
+							],
+							"query": [
+								{
+									"key": "idCard",
+									"value": "GHA-112211221-1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": \"10926902\",\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"A25\",\n        \"responseMessage\": \"NOT VERIFIED\"\n    },\n    \"reference\": null,\n    \"maskedReference\": null,\n    \"ghanaCard\": null,\n    \"timeout\": null\n}"
+				},
+				{
+					"name": "Test Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/verification/ghanacard/checker?idCard=GHA-112211221-1",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"verification",
+								"ghanacard",
+								"checker"
+							],
+							"query": [
+								{
+									"key": "idCard",
+									"value": "GHA-112211221-1"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": \"10926902\",\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"A25\",\n        \"responseMessage\": \"NOT VERIFIED\"\n    },\n    \"reference\": null,\n    \"maskedReference\": null,\n    \"ghanaCard\": null,\n    \"timeout\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Self Verification GH Card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/verification/ghanacard/selfie/test?pin=GHA-121122111-3&test=true",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"verification",
+						"ghanacard",
+						"selfie",
+						"test"
+					],
+					"query": [
+						{
+							"key": "pin",
+							"value": "GHA-121122111-3",
+							"description": "ghana card id number"
+						},
+						{
+							"key": "test",
+							"value": "true"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/verification/ghanacard/selfie?pin=qqqqq",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"verification",
+								"ghanacard",
+								"selfie"
+							],
+							"query": [
+								{
+									"key": "pin",
+									"value": "qqqqq",
+									"description": "ghana card id number"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 12345678,\n        \"username\": \"taylor-lee\",\n        \"email\": \"taylor.lee@example.com\",\n        \"fullName\": \"Taylor Lee\",\n        \"avatar\": \"https://example.com/user/r5u9qpvmujfjf6lbqmga.jpg\",\n        \"isPublic\": true\n    },\n    \"operations\": [\n        {\n            \"name\": \"mock_usage\",\n            \"limit\": 1000000,\n            \"usage\": 110276,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"monitor_request_runs\",\n            \"limit\": 10000000,\n            \"usage\": 1141750,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"api_usage\",\n            \"limit\": 1000000,\n            \"usage\": 16240,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"custom_domains\",\n            \"limit\": 25,\n            \"usage\": 25,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"serverless_requests\",\n            \"limit\": 10000,\n            \"usage\": 0,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"integrations\",\n            \"limit\": 5000,\n            \"usage\": 1018,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"cloud_agent_requests\",\n            \"limit\": 1000000,\n            \"usage\": 1615,\n            \"overage\": 0\n        }\n    ]\n}"
+				},
+				{
+					"name": "Test Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/verification/ghanacard/selfie?pin=111111&test=true",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"verification",
+								"ghanacard",
+								"selfie"
+							],
+							"query": [
+								{
+									"key": "pin",
+									"value": "111111",
+									"description": "ghana card id number"
+								},
+								{
+									"key": "test",
+									"value": "true",
+									"description": "this takes a boolean"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": \"31100770\",\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"A10\",\n        \"responseMessage\": \"SUCCESS\"\n    },\n    \"personalData\": {\n        \"nationalId\": null,\n        \"cardId\": \"GHA-584806838-3\",\n        \"cardValidFrom\": null,\n        \"cardValidTo\": null,\n        \"surname\": \"Tester\",\n        \"forenames\": \"Kojo\",\n        \"nationality\": \"GHANAIAN\",\n        \"birthDate\": \"30-May-1998\",\n        \"gender\": \"M\",\n        \"birthCountry\": \"GHANA\",\n        \"birthDistrict\": null,\n        \"birthRegion\": null,\n        \"birthTown\": \"Tema\",\n        \"addresses\": [\n            {\n                \"type\": null,\n                \"postalCode\": null,\n                \"region\": null,\n                \"addressDigital\": null,\n                \"gpsAddressDetails\": null\n            },\n            {\n                \"type\": null,\n                \"postalCode\": null,\n                \"region\": null,\n                \"addressDigital\": null,\n                \"gpsAddressDetails\": null\n            }\n        ],\n        \"contact\": {\n            \"email\": \"test@gmail.com\",\n            \"phoneNumbers\": [\n                {\n                    \"type\": \"Home\",\n                    \"phoneNumber\": \"233584806838\",\n                    \"network\": null\n                }\n            ]\n        },\n        \"occupations\": null,\n        \"biometricFeed\": null,\n        \"binaries\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Generate OTP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.environment.set(\"otp_reference\", response.reference);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/otpgenerate?type=number&query=23364362000&idCard=GHA-121122111-3",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"otpgenerate"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "number"
+						},
+						{
+							"key": "query",
+							"value": "23364362000"
+						},
+						{
+							"key": "idCard",
+							"value": "GHA-121122111-3",
+							"description": "Ghana Card Number"
+						}
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/otpgenerate?type=number&query=233530707165&idCard=GHA-1243232323-4",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"otpgenerate"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "number"
+								},
+								{
+									"key": "query",
+									"value": "233530707165"
+								},
+								{
+									"key": "idCard",
+									"value": "GHA-1243232323-4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 12345678,\n        \"username\": \"taylor-lee\",\n        \"email\": \"taylor.lee@example.com\",\n        \"fullName\": \"Taylor Lee\",\n        \"avatar\": \"https://example.com/user/r5u9qpvmujfjf6lbqmga.jpg\",\n        \"isPublic\": true\n    },\n    \"operations\": [\n        {\n            \"name\": \"mock_usage\",\n            \"limit\": 1000000,\n            \"usage\": 110276,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"monitor_request_runs\",\n            \"limit\": 10000000,\n            \"usage\": 1141750,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"api_usage\",\n            \"limit\": 1000000,\n            \"usage\": 16240,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"custom_domains\",\n            \"limit\": 25,\n            \"usage\": 25,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"serverless_requests\",\n            \"limit\": 10000,\n            \"usage\": 0,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"integrations\",\n            \"limit\": 5000,\n            \"usage\": 1018,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"cloud_agent_requests\",\n            \"limit\": 1000000,\n            \"usage\": 1615,\n            \"overage\": 0\n        }\n    ]\n}"
+				},
+				{
+					"name": "Test Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://ghuatgodigisrv2.gh.sbicdirectory.com:7102/PersonalAccountOpening/proxy/v2/otpgenerate?type=number&query=233530707165&idCard=GHA-1243232323-4",
+							"protocol": "https",
+							"host": [
+								"ghuatgodigisrv2",
+								"gh",
+								"sbicdirectory",
+								"com"
+							],
+							"port": "7102",
+							"path": [
+								"PersonalAccountOpening",
+								"proxy",
+								"v2",
+								"otpgenerate"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "number"
+								},
+								{
+									"key": "query",
+									"value": "233530707165"
+								},
+								{
+									"key": "idCard",
+									"value": "GHA-1243232323-4",
+									"description": "Ghana Card Number"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": \"31100770\",\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"A10\",\n        \"responseMessage\": \"SUCCESS\"\n    },\n    \"personalData\": {\n        \"nationalId\": null,\n        \"cardId\": \"GHA-584806838-3\",\n        \"cardValidFrom\": null,\n        \"cardValidTo\": null,\n        \"surname\": \"Tester\",\n        \"forenames\": \"Kojo\",\n        \"nationality\": \"GHANAIAN\",\n        \"birthDate\": \"30-May-1998\",\n        \"gender\": \"M\",\n        \"birthCountry\": \"GHANA\",\n        \"birthDistrict\": null,\n        \"birthRegion\": null,\n        \"birthTown\": \"Tema\",\n        \"addresses\": [\n            {\n                \"type\": null,\n                \"postalCode\": null,\n                \"region\": null,\n                \"addressDigital\": null,\n                \"gpsAddressDetails\": null\n            },\n            {\n                \"type\": null,\n                \"postalCode\": null,\n                \"region\": null,\n                \"addressDigital\": null,\n                \"gpsAddressDetails\": null\n            }\n        ],\n        \"contact\": {\n            \"email\": \"test@gmail.com\",\n            \"phoneNumbers\": [\n                {\n                    \"type\": \"Home\",\n                    \"phoneNumber\": \"233584806838\",\n                    \"network\": null\n                }\n            ]\n        },\n        \"occupations\": null,\n        \"biometricFeed\": null,\n        \"binaries\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Verify OTP Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.environment.set(\"token\", response.token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ghanaCard\": \"GHA-121122111-3\",\r\n  \"password\": \"0000\", //test code is 0000\r\n  \"username\": \"{{otp_reference}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/login",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"login"
+					]
+				},
+				"description": "Gets information about the authenticated user."
+			},
+			"response": [
+				{
+					"name": "Verify OTP Login (SUCCESS)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ghanaCard\": \"GHA-121122111-3\",\r\n  \"password\": \"0000\", //test code is 0000\r\n  \"username\": \"{{otp_reference}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/login",
+							"host": [
+								"{{eva.uat.sapis}}PersonalAccountOpening"
+							],
+							"path": [
+								"proxy",
+								"v2",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Apr 2025 10:44:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN,SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'; frame-ancestors 'self'; script-src 'self' https://assets.adobedtm.com https://dpm.demdex.net https://www.googletagmanager.com https://www.googleadservices.com https://connect.facebook.com https://maps.googleapis.com  https://connect.facebook.net https://hcaptcha.com  https://fonts.googleapis.com 'unsafe-inline' 'unsafe-eval' https://selfservice.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh  https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh; style-src 'self' 'unsafe-inline'  https://fonts.googleapis.com https://*.uat.stanbic.com.gh https://*.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh:8002/ https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh  https://dpm.demdex https://accstandardbank.d1.sc.omtrdc.net/ https://cm.everesttech.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com/* https://*.gh.sbicdirectory.com:*/ https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh https//eva.uat.stanbic.com.gh:8002/; connect-src https://dpm.demdex.net https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh https://*.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh:8002/ https://dc.services.visualstudio.com/v2/track https://live.applicationinsights.azure.com  https://maps.googleapis.com ;img-src * data: blob: 'unsafe-inline' https://selfservice.uat.stanbic.com.gh;frame-src https://app.powerbi.com/ * data: 'unsafe-inline' 'unsafe-eval'"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": null,\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"000\",\n        \"responseMessage\": \"SUCCESS\"\n    },\n    \"token\": \"eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiJHVUVTVCIsImF1ZCI6IkFDQ0VTUyIsImV4cCI6MTc0NTg0Nzg4NSwiaWF0IjoxNzQ1ODM3MDg1LCJqdGkiOiIyMzM2NDM2MjAwMCJ9.o1Twwz5RVNeLW0IWk7vLgdtKGofq5w6yyqbL0JpnuQGM7aAF9RUlKiEjBTjV_kPju1A8GCdo_MqbBbSo0uNmcmefkNcfvtYPjGyQpJvKwA7JAAe_q6wbIfCZcgtHyKnxZaYEzSKy_hLKxm38w2DnZHu7esJ1evaCxlVHIJBEUftliCiYu0jPYe2UH-9uy0KEJqIEdKL1qEKYAKzLPqZ8F2xeuFrXGwmA65YLzuiuNMB1N6qyLlZFkkE9VPT98vrLebsJI7sMQNU_HN1QRuVd8gqcjWJ2EQJLoBLINWL5wL0PVrH0mWS5tN-UQLSKXVJOMkO49Cm7oGi7rjwuWThn1w\",\n    \"refresh\": null,\n    \"validity\": \"28-04-2025 13:44:45\"\n}"
+				},
+				{
+					"name": "Verify OTP Login (FAILED)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ghanaCard\": \"GHA-121122111-3\",\r\n  \"password\": \"0000\", //test code is 0000\r\n  \"username\": \"{{otpreference}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/login",
+							"host": [
+								"{{eva.uat.sapis}}PersonalAccountOpening"
+							],
+							"path": [
+								"proxy",
+								"v2",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Apr 2025 10:45:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN,SAMEORIGIN"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'; frame-ancestors 'self'; script-src 'self' https://assets.adobedtm.com https://dpm.demdex.net https://www.googletagmanager.com https://www.googleadservices.com https://connect.facebook.com https://maps.googleapis.com  https://connect.facebook.net https://hcaptcha.com  https://fonts.googleapis.com 'unsafe-inline' 'unsafe-eval' https://selfservice.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh  https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh; style-src 'self' 'unsafe-inline'  https://fonts.googleapis.com https://*.uat.stanbic.com.gh https://*.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh:8002/ https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh  https://dpm.demdex https://accstandardbank.d1.sc.omtrdc.net/ https://cm.everesttech.net; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com/* https://*.gh.sbicdirectory.com:*/ https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh https//eva.uat.stanbic.com.gh:8002/; connect-src https://dpm.demdex.net https://selfservice.uat.stanbic.com.gh https://paperless.uat.stanbic.com.gh https://businessselfservice.uat.stanbic.com.gh https://eva.uat.stanbic.com.gh https://simsselfservice.uat.stanbic.com.gh https://self.icollect.uat.stanbic.com.gh https://*.gh.sbicdirectory.com:*/ https://eva.uat.stanbic.com.gh:8002/ https://dc.services.visualstudio.com/v2/track https://live.applicationinsights.azure.com  https://maps.googleapis.com ;img-src * data: blob: 'unsafe-inline' https://selfservice.uat.stanbic.com.gh;frame-src https://app.powerbi.com/ * data: 'unsafe-inline' 'unsafe-eval'"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hostHeaderInfo\": {\n        \"sourceCode\": \"ACCOUNT OPENING\",\n        \"requestId\": \"95969905\",\n        \"countryCode\": \"GH\",\n        \"responseCode\": \"A27\",\n        \"responseMessage\": \"OTP VERIFICATION FAILED\"\n    },\n    \"token\": null,\n    \"refresh\": null,\n    \"validity\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Branches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/list-available-branches",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"list-available-branches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Organizations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/proxy/v2/list-organizations?name=",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"proxy",
+						"v2",
+						"list-organizations"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"description": "optional -  filter by the org name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity-logs API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/api/v1/forms/activity-logs",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"api",
+						"v1",
+						"forms",
+						"activity-logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit forms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "GH"
+					},
+					{
+						"key": "sourceCode",
+						"value": "ACCOUNT OPENING"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isFinal\": false, // set true, if final form submission \r\n    \"customerInfo\": {\r\n        \"title\": \"Mr\",\r\n        \"firstName\": \"Test\",\r\n        \"lastName\": \"Test\",\r\n        \"dob\": \"Jan 5, 1995 12:00:00 AM\",\r\n        \"gender\": \"Female\",\r\n        \"nationality\": \"Ghanaian\",\r\n        \"countryOfResidence\": \"Ghana\",\r\n        \"maritalStatus\": \"Single\",\r\n        \"pepType\": \"N\",\r\n        \"purpose\": \"Salary,Savings\",\r\n        \"purposes\": [\r\n            \"Salary\",\r\n            \"Savings\"\r\n        ],\r\n        \"status\": \"\",\r\n        \"comment\": \"4445694003482911\",\r\n        \"createdBy\": \"233530707332\",\r\n        \"nextOfKinName\": \"Test Test\",\r\n        \"nextOfKinPhone\": \"233534686810\",\r\n        \"income\": [\r\n            \"Salary\"\r\n        ],\r\n        \"countryResidenceCode\": \"GH\",\r\n        \"nationalityCode\": \"GH\",\r\n        \"countryCodeOfTax\": \"GH\",\r\n        \"ghCardId\": \"GHA-121122111-3\",\r\n        \"submittedFrom\": \"IN BRANCH\",\r\n        \"requirementType\": \"\",\r\n        \"verificationMethod\": \"\",\r\n        \"accountGroup\": \"\",\r\n        \"termsAndCondition\": true,\r\n        \"declaration\": true,\r\n        \"marketDeclaration\": true,\r\n        \"maritalType\": \"Single\"\r\n    },\r\n    \"accountInfo\": {\r\n        \"chequeBookRequired\": \"N\",\r\n        \"cardRequired\": \"Y\",\r\n        \"ebankingUsername\": \"Steve\",\r\n        \"ebankingRequired\": \"Y\",\r\n        \"ussdRequired\": \"Y\",\r\n        \"smartAppRequired\": \"N\",\r\n        \"transactionalAlertRequired\": \"N\",\r\n        \"emailIndemnity\": \"Y\",\r\n        \"savingsAccount\": \"N\",\r\n        \"currentAccount\": \"N\",\r\n        \"emailAlert\": \"Y\",\r\n        \"smsAlert\": \"Y\",\r\n        \"accNoTypeCurrency\": [\r\n            {\r\n                \"accountType\": \"Savings Account\",\r\n                \"currency\": \"GHS\"\r\n            }\r\n        ],\r\n        \"accountType\": \"Savings Account\",\r\n        \"currency\": \"GHS\",\r\n        \"branchId\": \"041015\"\r\n    },\r\n    \"employmentInfo\": {\r\n        \"employmentType\": \"Private Practice\",\r\n        \"occupation\": \"Pharmacist \",\r\n        \"grossMonthlyIncome\": 2500.0,\r\n        \"levelOfDeposits\": \"2000\",\r\n        \"frequencyOfDeposits\": \"Monthly\",\r\n        \"employerName\": \"SEA BREEZE\",\r\n        \"natureOfBusiness\": \"Pharmacy \",\r\n        \"netIncome\": 2000.0,\r\n        \"incomePaymentCurrency\": \"GHS\",\r\n        \"customerId\": 62392\r\n    },\r\n    \"addressInfo\": [\r\n        {\r\n            \"city\": \"Accra\",\r\n            \"postalCode\": \"GM-078-2186\",\r\n            \"homeAddressSince\": \"Mar 19, 2021 12:00:00 AM\",\r\n            \"houseNo\": \"GM-078-2186\",\r\n            \"street\": \"Abakalila\",\r\n            \"community\": \"Agbogba \",\r\n            \"region\": \"Greater Accra\",\r\n            \"residentialStatus\": \"Rent\",\r\n            \"digitalAddress\": \"GM-078-2186\",\r\n            \"zipCode\": \"233\"\r\n        }\r\n    ],\r\n    \"phoneInfo\": [\r\n        {\r\n            \"phoneType\": \"CELLPH\",\r\n            \"phoneNumber\": \"233530000000\",\r\n            \"preferredPhoneFlag\": \"Y\"\r\n        }\r\n    ],\r\n    \"emailInfo\": [\r\n        {\r\n            \"email\": \"test@gmail.com\",\r\n            \"preferredEmailFlag\": \"Y\"\r\n        }\r\n    ],\r\n    \"idInfo\": {\r\n        \"idNo\": \"\",\r\n        \"preferred\": \"Y\",\r\n        \"idType\": \"National ID\",\r\n        \"issuePlace\": \"Accra \",\r\n        \"issueDate\": \"Jan 24, 2019 12:00:00 AM\",\r\n        \"expiryDate\": \"Jan 16, 2029 12:00:00 AM\",\r\n        \"tin\": \"\",\r\n        \"onlyTaxResidence\": \"Y\",\r\n        \"onlyNationality\": \"Y\",\r\n        \"onlyNationalityCode\": \"GH\",\r\n        \"countryTaxCode\": \"GH\"\r\n    },\r\n    \"docInfo\": {\r\n        \"validId\": \"\",\r\n        \"residenceProof\": \"\",\r\n        \"photo\": \"\",\r\n        \"signature\": \"\"\r\n    },\r\n    \"additionalDocuments\": [\r\n        \"\"\r\n    ],\r\n    \"otherAdditionalInfo\": {\r\n        \"industryClassification\": \"11\",\r\n        \"occupationList\": \"006\",\r\n        \"primarySic\": \"01\",\r\n        \"region\": \"001\",\r\n        \"returnClassification\": \"001\",\r\n        \"rmSapId\": \"A176399\",\r\n        \"rmPortfolioCode\": \"MD2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/api/v1/forms",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"api",
+						"v1",
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/api/v1/forms/username?username=",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"api",
+						"v1",
+						"forms",
+						"username"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "GH"
+					},
+					{
+						"key": "sourceCode",
+						"value": "ACCOUNT OPENING"
+					}
+				],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/api/v1/forms",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"api",
+						"v1",
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Form",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{eva.uat.sapis}}PersonalAccountOpening/api/v1/dashboard/download?customerId=706",
+					"host": [
+						"{{eva.uat.sapis}}PersonalAccountOpening"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dashboard",
+						"download"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "706"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
